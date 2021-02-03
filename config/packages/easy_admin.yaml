@@ -1,3 +1,38 @@
 easy_admin:
+    design:
+        menu:
+            - label: 'Portfolio'
+              children:
+                    - {entity: 'User', icon: 'far fa-user'}
+                    - {entity: 'Project', icon: 'fas fa-laptop-code'}
+                    - {entity: 'Client', icon: 'fas fa-users'}
+                    - {entity: 'Image', icon: 'fas fa-image'}
+                    - {entity: 'Tag', icon: 'fas fa-hashtag'}
     entities:
-        - App\Entity\User
+        User:
+            class: App\Entity\User
+        Client:
+            class: App\Entity\Client
+            form:
+                fields:
+                - {property: 'name'}
+        Image:
+            class: App\Entity\Image
+            form:
+              fields:
+                  - {property: 'posterFile', type: 'vich_image', base_path: '%upload_directory%', label: 'Image'}
+                  - {property: 'project'}
+        Tag:
+            class: App\Entity\Tag
+            form:
+                fields:
+                - {property: 'name'}
+        Project:
+            class: App\Entity\Project
+            form:
+                fields:
+                - {property: 'name'}
+                - {property: 'description'}
+                - {property: 'date'}
+                - {property: 'tags'}
+                - {property: 'client'}
