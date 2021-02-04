@@ -17,12 +17,10 @@
     <body>
         <header>
             {% block header %}
-                <h3 class="logo">Enzo Gaudry</h3>
+                <a href="/"><h3 class="logo">Enzo Gaudry</h3></a>
                 <nav>
                     <ul class="nav_links">
-                        <li><a href="/">Services</a></li>
-                        <li><a href="/">Client</a></li>
-                        <li><a href="/">About</a></li>
+                        <li><a href="{{ path('about') }}">About</a></li>
                     </ul>
                 </nav>
                 <a class="contact" href="{{ path('mail') }}"><button class="btn">Contact</button></a>

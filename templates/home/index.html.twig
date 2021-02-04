@@ -20,7 +20,7 @@
         {% for image in images %}
         <div class="content-unit">
             <div class="content-img">
-                <a href=""><img src="/uploads/{{ image.poster }}"></a>
+                <a href="{{ path('show', {'id':  image.project.id}) }}"><img src="/uploads/{{ image.poster }}"></a>
                 {% for tag in image.project.tags %}
                     <p>#{{ tag.name }}</p>
                 {% endfor %}
@@ -28,9 +28,8 @@
             <div class="content-infos">
                 <h3>{{ image.project.name }}</h3>
                 <p>{{ image.project.description }}</p>
-                <a href="">Explore</a>
+                <a href="{{ path('show', {'id':  image.project.id}) }}">Explore</a>
             </div>
-
         </div>
         {% endfor %}
     </div>

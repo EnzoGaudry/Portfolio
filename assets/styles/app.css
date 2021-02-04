@@ -15,11 +15,27 @@ header li, header a, header button, header h3 {
     text-decoration: none;
 }
 
+header h3 {
+    font-size: 1.3rem;
+}
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px 10%;
+}
+
+.linkedin {
+    background-color: #e6e7ee;
+    color: #3b5999;
+    border-color: #d1d9e6;
+    width: 3rem;
+    height: 3rem;
+}
+
+.linkedin span {
+    content: "\f09a";
 }
 
 .logo {
@@ -82,7 +98,7 @@ header {
 .content p{
     padding-top: 1rem;
     padding-left: 2rem;
-    letter-spacing: 0.03333333333333333rem;
+    letter-spacing: 0.033rem;
     width: 60%;
 }
 
@@ -108,15 +124,16 @@ header {
 .content-unit {
     display: flex;
     min-width: 1000px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 2rem;
-    box-shadow: 3px 3px 6px #17191b,-3px -3px 6px #303238;
+    margin-bottom: 5rem;
+    box-shadow: 6px 6px 12px #17191b,-6px -6px 12px #303238;
     border-color: #d1d9e6;
 }
 
 .content-img p {
-    margin-top: 0.3rem;
+    margin: 0.5rem;
 }
 
 .content-infos {
@@ -127,14 +144,22 @@ header {
 }
 
 .content-infos p {
+    overflow: hidden;
+    max-height: 98px;
+    text-overflow: ellipsis;
     margin-top: 3rem;
     margin-bottom: 3rem;
 }
 
 .content-unit img {
-  width: 15rem;
-  height: 15rem;
+    padding: 0.5rem;
+  width: 20rem;
+  height: 20rem;
   object-fit: cover;
+}
+
+.card h1 {
+    font-size: 3rem;
 }
 
 /* contact form */
@@ -153,6 +178,7 @@ header {
 
 .form h2 {
     margin-bottom: 3rem;
+    letter-spacing: 0.05rem;
 }
 
 .form-content {
@@ -183,4 +209,101 @@ header {
     border-style: none;
     border-color: #d1d9e6;
     box-shadow: inset 2px 2px 5px #17191b,inset -3px -3px 7px #303238;
+}
+
+/* about */
+
+.project-about h2{
+    margin-bottom: 5rem;
+    font-size: 2rem;
+    text-align: end;
+    margin-right: 15rem;
+    letter-spacing: 0.05rem;
+}
+
+.project {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 3rem;
+}
+
+.project img {
+    width: 20rem;
+    height: 12rem;
+}
+
+.about-content-unit {
+    padding: 0.3rem;
+    box-shadow: 6px 6px 12px #17191b,-6px -6px 12px #303238;
+    border-color: #d1d9e6;
+}
+
+.experience {
+    margin: 9rem 12rem 15rem 12rem;
+}
+
+.experience h2 {
+    font-size: 2rem;
+    margin-left: 28rem;
+    letter-spacing: 0.05rem;
+}
+
+.experience p {
+    margin-bottom: 0.4rem;
+}
+
+.experience h4 {
+    margin-bottom: 2rem;
+    letter-spacing: 0.05rem;
+}
+
+.experience-content {
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+    margin-right: 33rem;
+}
+
+/* show */
+
+.show-content {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.show-content-img {
+    margin-bottom: 3rem;
+}
+
+.show-content-img img {
+    width: 80%;
+    height: 30rem;
+    box-shadow: 15px 15px 10px #17191b,-8px -8px 10px #303238;
+    border-color: #d1d9e6;
+    padding: 0.3rem;
+}
+
+.show-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.05rem;
+}
+
+.show-content p {
+    letter-spacing: 0.08rem;
+}
+
+.gallery {
+    display: flex;
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery img{
+    width: 600px;
+    padding-left: .83333rem;
+    padding-right: .83333rem;
+    padding-bottom: .83333rem;
 }
