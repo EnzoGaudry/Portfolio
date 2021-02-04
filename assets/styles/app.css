@@ -143,6 +143,14 @@ header {
     flex-direction: column;
 }
 
+.content-infos a {
+    width: min-content;
+}
+
+.content-infos h3 {
+    font-size: 2rem;
+}
+
 .content-infos p {
     overflow: hidden;
     max-height: 98px;
@@ -156,6 +164,11 @@ header {
   width: 20rem;
   height: 20rem;
   object-fit: cover;
+}
+
+.content-tag {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .card h1 {
