@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HomePage{% endblock %}
+
+{% block body %}
+    <div class="content">
+        <div class="card">
+            <h1>Web Developer</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Mauris commodo iaculis erat, et tincidunt elit posuere et.
+            Suspendisse id malesuada justo, id consequat erat.
+            Donec nec justo nulla. Cras ornare tellus sit amet elit vehicula porttitor ut convallis dui. Nulla.</p>
+            <div class="img">
+                <img src="/uploads/developer.png">
+            </div>
+        </div>
+    </div>
+
+    <div class="content-block">
+        {% for image in images %}
+        <div class="content-unit">
+            <div class="content-img">
+                <a href=""><img src="/uploads/{{ image.poster }}"></a>
+                {% for tag in image.project.tags %}
+                    <p>#{{ tag.name }}</p>
+                {% endfor %}
+            </div>
+            <div class="content-infos">
+                <h3>{{ image.project.name }}</h3>
+                <p>{{ image.project.description }}</p>
+                <a href="">Explore</a>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

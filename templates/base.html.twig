@@ -2,12 +2,32 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/build/app.css">
+        <script src="/build/app.js"></script>
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
 
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
     </head>
     <body>
+        <header>
+            {% block header %}
+                <h3 class="logo">Enzo Gaudry</h3>
+                <nav>
+                    <ul class="nav_links">
+                        <li><a href="/">Services</a></li>
+                        <li><a href="/">Client</a></li>
+                        <li><a href="/">About</a></li>
+                    </ul>
+                </nav>
+                <a class="contact" href="{{ path('mail') }}"><button class="btn">Contact</button></a>
+            {% endblock %}
+        </header>
         {% block body %}{% endblock %}
     </body>
 </html>
