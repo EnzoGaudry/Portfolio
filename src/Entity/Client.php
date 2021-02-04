@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use DateTimeInterface;
 use App\Entity\Project;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ClientRepository;
@@ -29,6 +30,16 @@ class Client
      * @ORM\OneToMany(targetEntity=Project::class, mappedBy="client")
      */
     private $projects;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $dateStart;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $dateEnd;
 
     public function __construct()
     {
@@ -85,5 +96,29 @@ class Client
     public function __toString()
     {
         return $this->name;
+    }
+
+    public function getDateStart(): ?\DateTimeInterface
+    {
+        return $this->dateStart;
+    }
+
+    public function setDateStart(\DateTimeInterface $dateStart): self
+    {
+        $this->dateStart = $dateStart;
+
+        return $this;
+    }
+
+    public function getDateEnd(): ?\DateTimeInterface
+    {
+        return $this->dateEnd;
+    }
+
+    public function setDateEnd(\DateTimeInterface $dateEnd): self
+    {
+        $this->dateEnd = $dateEnd;
+
+        return $this;
     }
 }

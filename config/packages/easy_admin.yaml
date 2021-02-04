@@ -1,6 +1,9 @@
 easy_admin:
+    site_name: 'Portfolio de Enzo Gaudry'
     design:
+        brand_color: '#0088a9'
         menu:
+            - { label: 'Site', icon: 'globe', url: '/' }
             - label: 'Portfolio'
               children:
                     - {entity: 'User', icon: 'far fa-user'}
@@ -16,11 +19,15 @@ easy_admin:
             form:
                 fields:
                 - {property: 'name'}
+                - {property: 'dateStart'}
+                - {property: 'dateEnd'}
         Image:
             class: App\Entity\Image
             form:
               fields:
                   - {property: 'posterFile', type: 'vich_image', base_path: '%upload_directory%', label: 'Image'}
+                  - {property: 'priority', type: 'choice',
+                                type_options: { multiple: false, choices: { 'Homepage': '1', 'More': '2' } } }}
                   - {property: 'project'}
         Tag:
             class: App\Entity\Tag

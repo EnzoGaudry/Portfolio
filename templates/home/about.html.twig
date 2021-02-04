@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}About{% endblock %}
+
+{% block body %}
+
+    <div class="content">
+        <div class="card">
+            <h1>Enzo Gaudry</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Mauris commodo iaculis erat, et tincidunt elit posuere et.
+            Suspendisse id malesuada justo, id consequat erat.
+            Donec nec justo nulla. Cras ornare tellus sit amet elit vehicula porttitor ut convallis dui. Nulla.</p>
+        </div>
+    </div>
+
+    <div class="project-about">
+        <h2>A little show of my projects</h2>
+        <div class="project">
+            {% for image in images %}
+                <div class="about-content-unit">
+                    <div class="about-content-img">
+                        <a href="{{ path('show', {'id':  image.project.id}) }}"><img src="/uploads/{{ image.poster }}"></a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="experience">
+        <h2>Experience</h2>
+        <div class="experience-content">
+            {% for client in clients %}
+                <p>{{ client.dateStart|format_datetime('short', 'none', locale='fr') }} - {{ client.dateEnd|format_datetime('short', 'none', locale='fr') }}</p>
+                <h4>{{ client.name }}</h4>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

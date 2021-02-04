@@ -45,6 +45,11 @@ class Image
      */
     private $project;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $priority;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -90,5 +95,17 @@ class Image
     public function __toString()
     {
         return $this->poster;
+    }
+
+    public function getPriority(): ?int
+    {
+        return $this->priority;
+    }
+
+    public function setPriority(int $priority): self
+    {
+        $this->priority = $priority;
+
+        return $this;
     }
 }
