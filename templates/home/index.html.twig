@@ -3,6 +3,9 @@
 {% block title %}HomePage{% endblock %}
 
 {% block body %}
+    {% for message in app.flashes('message') %}
+        {{message}}
+    {% endfor %}
     <div class="content">
         <div class="card">
             <h1>Web Developer</h1>
@@ -21,9 +24,11 @@
         <div class="content-unit">
             <div class="content-img">
                 <a href="{{ path('show', {'id':  image.project.id}) }}"><img src="/uploads/{{ image.poster }}"></a>
-                {% for tag in image.project.tags %}
-                    <p>#{{ tag.name }}</p>
-                {% endfor %}
+                <div class="content-tag">
+                    {% for tag in image.project.tags %}
+                        <p>#{{ tag.name }}</p>
+                    {% endfor %}
+                </div>
             </div>
             <div class="content-infos">
                 <h3>{{ image.project.name }}</h3>
