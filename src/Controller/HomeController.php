@@ -27,7 +27,7 @@ class HomeController extends AbstractController
     public function about(ImageRepository $imageRepository, ClientRepository $clientRepository): Response
     {
         $images = $imageRepository->findBy(['priority' => '1'], null, 3);
-        $clients = $clientRepository->findBy([], ['dateStart' => 'DESC']);
+        $clients = $clientRepository->findBy([], ['dateEnd' => 'DESC']);
         return $this->render('home/about.html.twig', ['images' => $images, 'clients' => $clients]);
     }
 
