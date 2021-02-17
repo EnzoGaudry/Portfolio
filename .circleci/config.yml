@@ -8,6 +8,11 @@ jobs:
     docker:
       # Specify the version you desire here
       - image: circleci/php:7.4.3-node-browsers
+    environment:
+        MYSQL_ROOT_PASSWORD: rootpw
+        MYSQL_DATABASE: test_db
+        MYSQL_USER: user
+        MYSQL_PASSWORD: -Sn0wBack430-
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -49,8 +54,11 @@ jobs:
             - node_modules
 
       # prepare the database
-      - run: touch storage/testing.sqlite
-      - run: php artisan migrate --env=testing --database=sqlite_testing --force
+      - run:
+          name: Install MySQL CLI; Import dummy data; run an example query
+          command: |
+            sudo apt-get install default-mysql-client
+            mysql -h 127.0.0.1 -u user -ppassw0rd test_db < data.sql
 
       # run tests with phpunit or codecept
       #- run: ./vendor/bin/phpunit
