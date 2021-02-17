@@ -36,7 +36,7 @@ class HomeController extends AbstractController
      */
     public function show(ProjectRepository $projectRepository, ImageRepository $imageRepository, $id): Response
     {
-        $projects = $projectRepository->findBy(['id' =>$id]);
+        $projects = $projectRepository->findBy(['id' => $id]);
         $images = $imageRepository->findBy(['project' => $id]);
         return $this->render('home/show.html.twig', ['projects' => $projects, 'images' => $images]);
     }
